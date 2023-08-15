@@ -24,7 +24,7 @@
 ### 使用方法（以下二选一）
 1. 添加到 feeds.conf.default 文件
 ```yml
-sed -i '1i src-git haibo https://github.com/s71557/StoneOS-Packages' feeds.conf.default
+sed -i '1i src-git stone https://github.com/s71557/StoneOS-Packages' feeds.conf.default
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 make menuconfig

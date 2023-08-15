@@ -39,7 +39,7 @@ jobs:
     - name: Upload Packages
       run: |
         Emoji=("🎉" "🤞" "✨" "🎁" "🎈" "🎄" "🎨" "💋" "🍓" "🍕" "🍉" "💐" "🌴" "🚀" "🛸" "🗽" "⛅" "🌈" "🔥" "⛄" "🐶" "🏅" "🦄" "🐤")
-        [ -e $GITHUB_WORKSPACE/README.md ] && cp $GITHUB_WORKSPACE/README.md $FILE_PATH
+        [ -e $GITHUB_WORKSPACE/README-IstoreOS.md ] && cp $GITHUB_WORKSPACE/README.md $FILE_PATH
         [ -e $GITHUB_WORKSPACE/LICENSE ] && cp $GITHUB_WORKSPACE/LICENSE $FILE_PATH
         cd $FILE_PATH
         git add .

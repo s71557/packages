@@ -80,9 +80,11 @@ svn export https://github.com/xiangfeidexiaohuo/openwrt-packages/trunk/op-homebo
 svn export https://github.com/xiangfeidexiaohuo/openwrt-packages/trunk/op-homebox/homebox
 svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/services/msd_lite && mv -n msd_lite/luci-app-msd_lite ./
 
-git_sparse_clone "https://github.com/immortalwrt/luci" "luci" applications/luci-app-eqos \
+git_sparse_clone master "https://github.com/immortalwrt/luci" "luci" applications/luci-app-eqos \
 applications/luci-app-aliddns applications/luci-app-gost applications/luci-app-iptvhelper
 
+git_sparse_clone main "https://github.com/s71557/packages" "packages" luci-app-wrtbwmon wrtbwmon luci-app-onliner \
+luci-theme-atmaterial luci-theme-atmaterial_new luci-theme-opentomcat luci-theme-opentomato luci-theme-netgear
 
 rm -rf ./*/.* & rm -rf ./*/LICENSE
 find -type f -name '*.md' -print -exec rm -rf {} \;

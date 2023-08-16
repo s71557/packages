@@ -15,7 +15,6 @@ mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
 }
 
-
 git clone --depth=1 https://github.com/kiddin9/luci-theme-edge
 git clone --depth=1 https://github.com/kiddin9/luci-app-dnsfilter
 git clone --depth=1 https://github.com/kiddin9/qBittorrent-Enhanced-Edition
@@ -44,6 +43,7 @@ git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblocknetea
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 git clone --depth=1 https://github.com/fw876/helloworld && rm -rf helloworld/luci-app-ssr-plus
 git clone --depth=1 https://github.com/chenmozhijin/turboacc && rm -rf turboacc/luci-app-turboacc
+git clone --depth=1  package https://github.com/chenmozhijin/turboacc
 
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
 git clone --depth 1 https://github.com/sbwml/openwrt-alist && mvdir openwrt-alist

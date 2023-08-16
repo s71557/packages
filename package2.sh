@@ -42,8 +42,7 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk mentohu
 git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 git clone --depth=1 https://github.com/fw876/helloworld && rm -rf helloworld/luci-app-ssr-plus
-git clone --depth=1 https://github.com/chenmozhijin/turboacc && \ cd turboacc && \ rm -rf `ls | grep -v ^luci-app-turboacc$`
-git clone -b package --depth=1 https://github.com/chenmozhijin/turboacc
+git clone --depth=1 https://github.com/imy7/luci-app-turboacc
 
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
 git clone --depth 1 https://github.com/sbwml/openwrt-alist && mvdir openwrt-alist

@@ -15,6 +15,7 @@ mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
 }
 
+git clone --depth=1 https://github.com/chenmozhijin/turboacc
 git clone --depth=1 https://github.com/kiddin9/luci-theme-edge
 git clone --depth=1 https://github.com/kiddin9/luci-app-dnsfilter
 git clone --depth=1 https://github.com/kiddin9/qBittorrent-Enhanced-Edition

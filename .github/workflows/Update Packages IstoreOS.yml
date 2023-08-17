@@ -29,8 +29,8 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         chmod +x $SCRIPT
-        git clone -b $BRANCH https://github.com/s71557/IstoreOS-Packages.git
-        cd IstoreOS-Packages
+        git clone -b $BRANCH https://github.com/s71557/istoreos-packages.git
+        cd istoreos-packages
         git rm -r --cache * >/dev/null 2>&1
         rm -rf `find ./* -maxdepth 0 -type d ! -name "diy"` >/dev/null 2>&1
         $GITHUB_WORKSPACE/$SCRIPT
@@ -44,7 +44,7 @@ jobs:
         cd $FILE_PATH
         git add .
         git commit -m "${Emoji[$[$RANDOM % ${#Emoji[@]}]]}同步源码于$(date +%Y年%m月%d日"-"%H点%M分%S秒)${Emoji[$[$RANDOM % ${#Emoji[@]}]]}"
-        git push --quiet "https://${{ secrets.ACCESS_TOKEN }}@github.com/s71557/IstoreOS-Packages.git" HEAD:$BRANCH
+        git push --quiet "https://${{ secrets.ACCESS_TOKEN }}@github.com/s71557/istoreos-packages.git" HEAD:$BRANCH
 
     - name: Delete Workflows
       if: always()

@@ -40,6 +40,9 @@ jobs:
       run: |
         Emoji=("🎉" "🤞" "✨" "🎁" "🎈" "🎄" "🎨" "💋" "🍓" "🍕" "🍉" "💐" "🌴" "🚀" "🛸" "🗽" "⛅" "🌈" "🔥" "⛄" "🐶" "🏅" "🦄" "🐤")
         [ -e $GITHUB_WORKSPACE/README.md ] && cp $GITHUB_WORKSPACE/README.md $FILE_PATH
+         [ -e $GITHUB_WORKSPACE/luci-theme-argon/htdocs/luci-static/argon
+/img/bg1.jpg ] && cp $GITHUB_WORKSPACE/luci-theme-argon/htdocs/luci-static/argon
+/img/bg1.jpg $FILE_PATH
         [ -e $GITHUB_WORKSPACE/LICENSE ] && cp $GITHUB_WORKSPACE/LICENSE $FILE_PATH
         cd $FILE_PATH
         git add .

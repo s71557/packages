@@ -83,7 +83,7 @@ svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/servi
 git_sparse_clone openwrt-18.06 "https://github.com/immortalwrt/luci" "luci" applications/luci-app-eqos \
 applications/luci-app-aliddns applications/luci-app-gost applications/luci-app-iptvhelper
 
-git_sparse_clone main "https://github.com/s71557/packages" "packages" luci-app-wrtbwmon wrtbwmon luci-app-onliner \
+#git_sparse_clone main "https://github.com/s71557/packages" "packages" luci-app-wrtbwmon wrtbwmon luci-app-onliner \
 luci-theme-atmaterial luci-theme-atmaterial_new luci-theme-opentomcat luci-theme-opentomato luci-theme-netgear
 
 rm -rf ./*/.* & rm -rf ./*/LICENSE

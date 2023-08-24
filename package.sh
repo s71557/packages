@@ -86,6 +86,18 @@ applications/luci-app-aliddns applications/luci-app-gost applications/luci-app-i
 git_sparse_clone main "https://github.com/s71557/packages" "packages" luci-app-wrtbwmon wrtbwmon luci-app-onliner \
 luci-theme-atmaterial luci-theme-atmaterial_new luci-theme-opentomcat luci-theme-opentomato luci-theme-netgear
 
+import requests
+
+src_url = "https://github.com/s71557/packagesluci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg"
+dst_url = "https://github.com/s71557/Lede-Packages/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg"
+
+response = requests.get(src_url)
+
+if response.status_code == 200:
+    with open(dst_url, "wb") as f:
+        f.write(response.content)
+else:
+    print("Error downloading file.")
 
 rm -rf ./*/.* & rm -rf ./*/LICENSE
 find -type f -name '*.md' -print -exec rm -rf {} \;

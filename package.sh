@@ -87,14 +87,6 @@ git_sparse_clone main "https://github.com/s71557/packages" "packages" luci-app-w
 luci-theme-atmaterial luci-theme-atmaterial_new luci-theme-opentomcat luci-theme-opentomato luci-theme-netgear
 
 
-response = requests.get(src_url)
-
-if response.status_code == 200:
-    with open(dst_url, "wb") as f:
-        f.write(response.content)
-else:
-    print("Error downloading file.")
-
 rm -rf ./*/.* & rm -rf ./*/LICENSE
 find -type f -name '*.md' -print -exec rm -rf {} \;
 find luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;

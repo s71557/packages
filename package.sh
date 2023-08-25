@@ -86,10 +86,6 @@ applications/luci-app-aliddns applications/luci-app-gost applications/luci-app-i
 git_sparse_clone main "https://github.com/s71557/packages" "packages" luci-app-wrtbwmon wrtbwmon luci-app-onliner \
 luci-theme-atmaterial luci-theme-atmaterial_new luci-theme-opentomcat luci-theme-opentomato luci-theme-netgear
 
-import requests
-
-src_url = "https://github.com/s71557/packagesluci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg"
-dst_url = "https://github.com/s71557/Lede-Packages/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg"
 
 response = requests.get(src_url)
 

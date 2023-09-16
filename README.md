@@ -2,10 +2,10 @@
 
 <h1>StoneOS — 常用插件包合集</h1>
 
-<img src="https://img.shields.io/github/languages/code-size/s71557/StoneOS-Packages?style=for-the-badge&color=32C955"/>
-<img src="https://img.shields.io/github/stars/s71557/StoneOS-Packages?style=for-the-badge&color=orange"/>
-<img src="https://img.shields.io/github/forks/s71557/StoneOS-Packages?style=for-the-badge&color=ff69b4"/>
-<img src="https://img.shields.io/github/license/s71557/StoneOS-Packages?style=for-the-badge&color=blueviolet"/>
+<img src="https://img.shields.io/github/languages/code-size/s71557/Lede-Packages?style=for-the-badge&color=32C955"/>
+<img src="https://img.shields.io/github/stars/s71557/Lede-Packages?style=for-the-badge&color=orange"/>
+<img src="https://img.shields.io/github/forks/s71557/Lede-Packages?style=for-the-badge&color=ff69b4"/>
+<img src="https://img.shields.io/github/license/s71557/Lede-Packages?style=for-the-badge&color=blueviolet"/>
 </div>
 
 ### 项目说明
@@ -24,14 +24,14 @@
 ### 使用方法（以下二选一）
 1. 添加到 feeds.conf.default 文件
 ```yml
-sed -i '1i src-git stone https://github.com/s71557/StoneOS-Packages' feeds.conf.default
+sed -i '1i src-git stone https://github.com/s71557/Lede-Packages' feeds.conf.default
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 make menuconfig
 ```
 2. 在源码目录内直接拉取
 ```yml
-git clone https://github.com/s71557/StoneOS-Packages package/StoneOS-Packages
+git clone https://github.com/s71557/Lede-Packages package/StoneOS-Packages
 make menuconfig
 ```
 

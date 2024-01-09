@@ -41,7 +41,7 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk mentohu
 git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
 
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
-git clone --depth 1 https://github.com/sbwml/luci-app-alist && mvdir openwrt-alist
+git clone --depth 1 https://github.com/sbwml/openwrt-alist && mvdir openwrt-alist
 git clone --depth 1 https://github.com/sbwml/luci-app-mosdns openwrt-mosdns && mvdir openwrt-mosdns
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go openwrt-ddns-go && mvdir openwrt-ddns-go
 git clone --depth 1 https://github.com/linkease/istore && mv -n istore/luci/* ./; rm -rf istore

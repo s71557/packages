@@ -40,8 +40,6 @@ git clone --depth=1 https://github.com/sensec/openwrt-udp2raw udp2raw
 git clone --depth=1 https://github.com/BoringCat/luci-app-mentohust
 git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk mentohust
 git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
-git clone --depth=1 https://github.com/fw876/helloworld && rm -rf helloworld/luci-app-ssr-plus
 
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
 git clone --depth 1 https://github.com/sbwml/openwrt-alist && mvdir openwrt-alist
@@ -53,9 +51,11 @@ git clone --depth 1 https://github.com/linkease/nas-packages && mv -n nas-packag
 git clone --depth 1 https://github.com/linkease/nas-packages-luci && mv -n nas-packages-luci/luci/* ./; rm -rf nas-packages-luci
 git clone --depth 1 https://github.com/messense/aliyundrive-fuse aliyundrive && mv -n aliyundrive/openwrt/* ./; rm -rf aliyundrive
 git clone --depth 1 https://github.com/messense/aliyundrive-webdav aliyundrive && mv -n aliyundrive/openwrt/* ./; rm -rf aliyundrive
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2 passwall2 && mv -n passwall2/luci-app-passwall2 ./;rm -rf passwall2
 git clone --depth 1 https://github.com/vernesong/OpenClash && mv -n OpenClash/luci-app-openclash ./; rm -rf OpenClash
+git clone --depth=1 https://github.com/fw876/helloworld && mv -n helloworld/luci-app-ssr-plus ./; rm -rf ssr-plus
 
 svn export https://github.com/xiaorouji/openwrt-passwall/main/luci-app-passwall
 svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2

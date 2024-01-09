@@ -16,18 +16,17 @@ rm -rf $1
 }
 
 git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge
-git clone --depth=1 https://github.com/kiddin9/luci-app-dnsfilter
+#git clone --depth=1 https://github.com/kiddin9/luci-app-dnsfilter
 git clone --depth=1 https://github.com/kiddin9/qBittorrent-Enhanced-Edition
-git clone --depth=1 https://github.com/yaof2/luci-app-ikoolproxy
+#git clone --depth=1 https://github.com/yaof2/luci-app-ikoolproxy
 git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-app-serverchan
 git clone --depth=1 https://github.com/ntlf9t/luci-app-easymesh
 git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
-git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb
 git clone --depth=1 https://github.com/sirpdboy/luci-app-advanced
-git clone --depth=1 https://github.com/hubbylei/luci-app-clash
+#git clone --depth=1 https://github.com/hubbylei/luci-app-clash
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata
 git clone --depth=1 https://github.com/thinktip/luci-theme-neobird
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
@@ -42,7 +41,7 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk mentohu
 git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
 
 git clone --depth 1 https://github.com/destan19/OpenAppFilter && mvdir OpenAppFilter
-git clone --depth 1 https://github.com/sbwml/openwrt-alist && mvdir openwrt-alist
+git clone --depth 1 https://github.com/sbwml/luci-app-alist && mvdir openwrt-alist
 git clone --depth 1 https://github.com/sbwml/luci-app-mosdns openwrt-mosdns && mvdir openwrt-mosdns
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go openwrt-ddns-go && mvdir openwrt-ddns-go
 git clone --depth 1 https://github.com/linkease/istore && mv -n istore/luci/* ./; rm -rf istore

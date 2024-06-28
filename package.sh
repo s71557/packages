@@ -15,11 +15,11 @@ mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
 }
 
-git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge
+git clone --depth=1 -b master https://github.com/kiddin9/luci-theme-edge
 #git clone --depth=1 https://github.com/kiddin9/luci-app-dnsfilter
 git clone --depth=1 https://github.com/kiddin9/qBittorrent-Enhanced-Edition
 #git clone --depth=1 https://github.com/yaof2/luci-app-ikoolproxy
-git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-app-serverchan
+git clone --depth=1 -b master https://github.com/tty228/luci-app-wechatpush luci-app-serverchan
 git clone --depth=1 https://github.com/ntlf9t/luci-app-easymesh
 git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
@@ -30,7 +30,7 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-advanced
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata
 git clone --depth=1 https://github.com/thinktip/luci-theme-neobird
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
-git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns
+git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns
 git clone --depth=1 https://github.com/pymumu/openwrt-smartdns smartdns
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome
 git clone --depth=1 https://github.com/peter-tank/luci-app-autorepeater
@@ -82,7 +82,7 @@ svn export https://github.com/xiangfeidexiaohuo/openwrt-packages/trunk/op-homebo
 svn export https://github.com/xiangfeidexiaohuo/openwrt-packages/trunk/op-homebox/homebox
 svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/services/msd_lite && mv -n msd_lite/luci-app-msd_lite ./
 
-git_sparse_clone openwrt-18.06 "https://github.com/immortalwrt/luci" "luci" applications/luci-app-eqos \
+git_sparse_clone master "https://github.com/immortalwrt/luci" "luci" applications/luci-app-eqos \
 applications/luci-app-aliddns applications/luci-app-gost applications/luci-app-iptvhelper
 
 git_sparse_clone main "https://github.com/s71557/packages" "packages" luci-app-wrtbwmon wrtbwmon luci-app-onliner \

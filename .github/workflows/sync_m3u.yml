@@ -1,0 +1,38 @@
+name: Sync and Modify M3U File
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Download, process, and modify m3u file
+      run: |
+        # Download the source file
+        curl -o source_ipv6.m3u https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u
+        
+        # Process the file: replace the specific content and save to ipv6.m3u
+        sed 's/group-title="央视频道",CCTV-1 综合/group-title="央视频道",CCTV1/g' source_ipv6.m3u > ipv6.m3u
+        
+        # Clean up
+        rm source_ipv6.m3u
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        git diff --exit-code ipv6.m3u || echo "changes=true" >> $GITHUB_OUTPUT
+
+    - name: Commit and push if changed
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add ipv6.m3u
+        git commit -m "Update and modify ipv6.m3u file"
+        git push

@@ -1,4 +1,4 @@
-name: Sync and Modify M3U File
+name: Sync M3U Directory
 
 on:
   schedule:
@@ -12,27 +12,26 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Download, process, and modify m3u file
+    - name: Create m3u directory if it doesn't exist
+      run: mkdir -p tv/m3u
+
+    - name: Sync m3u files
       run: |
-        # Download the source file
-        curl -o source_ipv6.m3u https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u
-        
-        # Process the file: replace the specific content and save to ipv6.m3u
-        sed 's/group-title="央视频道",CCTV-1 综合/group-title="央视频道",CCTV1/g' source_ipv6.m3u > ipv6.m3u
-        
-        # Clean up
-        rm source_ipv6.m3u
+        cd tv/m3u
+        for file in ipv6.m3u global.m3u iptv.m3u; do
+          curl -O "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/$file"
+        done
 
     - name: Check for changes
       id: check_changes
       run: |
-        git diff --exit-code ipv6.m3u || echo "changes=true" >> $GITHUB_OUTPUT
+        git status --porcelain tv/m3u | grep . && echo "changes=true" >> $GITHUB_OUTPUT || echo "No changes"
 
     - name: Commit and push if changed
       if: steps.check_changes.outputs.changes == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add ipv6.m3u
-        git commit -m "Update and modify ipv6.m3u file"
+        git add tv/m3u
+        git commit -m "Sync m3u files from fanmingming/live"
         git push

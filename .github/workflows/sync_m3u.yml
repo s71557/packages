@@ -1,37 +1,22 @@
-name: Sync M3U Directory
-
+name: EPG Update
 on:
+  push:
   schedule:
-    - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
-  workflow_dispatch:  # Allows manual trigger
+    - cron: '15 16,18,20,22,0,2,4,6,8,10,12,14 * * *'
 
 jobs:
-  sync:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Create m3u directory if it doesn't exist
-      run: mkdir -p tv/m3u
-
-    - name: Sync m3u files
+    - uses: actions/checkout@v3
+    - name: Update EPG Files
       run: |
-        cd tv/m3u
-        for file in ipv6.m3u global.m3u iptv.m3u; do
-          curl -O "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/$file"
-        done
-
-    - name: Check for changes
-      id: check_changes
-      run: |
-        git status --porcelain tv/m3u | grep . && echo "changes=true" >> $GITHUB_OUTPUT || echo "No changes"
-
-    - name: Commit and push if changed
-      if: steps.check_changes.outputs.changes == 'true'
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add tv/m3u
-        git commit -m "Sync m3u files from fanmingming/live"
-        git push
+        rm -f e.xml && wget https://epg.112114.xyz/pp.xml -O e.xml
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add e.xml
+        git commit -m "EPG Automatic Update."
+    - name: Push changes
+      run: git push -f origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
